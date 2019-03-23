@@ -59,12 +59,11 @@ We use these goals frequently to keep the dependencies and plugins up-to-date:
         </developer>
     </developers>
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <assertj.core.version>3.11.1</assertj.core.version>
+        <assertj.core.version>3.12.2</assertj.core.version>
         <eclipse.lifecycle.mapping.version>1.0.0</eclipse.lifecycle.mapping.version>
         <java.version>1.8</java.version>
         <jmh.version>1.21</jmh.version>
-        <junit.version>4.13-beta-1</junit.version>
+        <junit.version>4.13-beta-2</junit.version>
         <maven.enforcer.version>3.0.0-M2</maven.enforcer.version>
         <maven.build-helper.version>3.0.0</maven.build-helper.version>
         <maven.bundle.version>4.1.0</maven.bundle.version>
@@ -81,6 +80,8 @@ We use these goals frequently to keep the dependencies and plugins up-to-date:
         <maven.surefire.version>3.0.0-M3</maven.surefire.version>
         <maven.source.version>3.0.1</maven.source.version>
         <maven.exec.version>1.5.0</maven.exec.version>
+        <openclover.version>4.3.1</openclover.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <scala.maven.version>3.4.4</scala.maven.version>
         <scala.version>2.12.6</scala.version>
         <scala.compat.version>2.12</scala.compat.version>
@@ -104,6 +105,7 @@ We use these goals frequently to keep the dependencies and plugins up-to-date:
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <build>
         <plugins>
             <plugin>
@@ -506,6 +508,22 @@ We use these goals frequently to keep the dependencies and plugins up-to-date:
                     </plugins>
                 </pluginManagement>
             </build>
+        </profile>
+        <!-- alg IDEA plugin compatability-->
+        <profile>
+            <id>satisfyIdeaPluginDependencies</id>
+            <dependencies>
+                <dependency>
+                    <groupId>systems.manifold</groupId>
+                    <artifactId>manifold-all</artifactId>
+                    <version>0.50-alpha</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.openclover</groupId>
+                    <artifactId>clover</artifactId>
+                  <version>${openclover.version}</version>
+                </dependency>
+            </dependencies>
         </profile>
     </profiles>
 </project>
