@@ -16,6 +16,7 @@ bin
 .idea
 *.iml
 *.ipr
+*.iws
 
 # -- Visual Studio Code
 .vscode
