@@ -15,6 +15,7 @@ bin
 # -- IntelliJ IDEA
 .idea
 *.iml
+*.ipr
 
 # -- Visual Studio Code
 .vscode
